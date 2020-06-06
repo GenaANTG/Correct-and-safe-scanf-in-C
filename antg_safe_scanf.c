@@ -1,8 +1,9 @@
 /**
- * Copyright (c) 2020 Gena ANTG <antg.production@gmail.com>
- * Example of a program to correct and safe reading 7/8-bit characters from [stdin]
- * Example of correct flushing [stdin]
+ * Example how to correct and safe reading 7/8-bit characters from [stdin] with a [scanf] function in a C language
+ * Example how to correct flushing [stdin] in a C (don't use fflush(stdin)!)
  * Note: You can remove [#ifdef] blocks
+ * 
+ * Copyright (c) 2020 Gena ANTG <antg.production@gmail.com>
  * License: GNU GPL
  */
 
@@ -11,16 +12,16 @@
 
 /**
  * Define a function to logging
- * if [-D DEBUG_ENABLED] flag is enabled for GCC compiler
+ * if a [-D DEBUG_ENABLED] flag is enabled for a GCC compiler
  */
 #ifdef DEBUG_ENABLED
 static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 #endif
 
 /**
- * A correct way to flushing [stdin] (don't use [fflush(stdin)]!)
+ * A correct way to flushing [stdin]
  * ! Important: You should use this function 
- * ! Important: after every [scanf] or event better [safe_read_char] calling!
+ * ! Important: after every a [scanf] (or event better) [safe_read_char] calling!
  */
 void stdin_flushing(void)
 {
