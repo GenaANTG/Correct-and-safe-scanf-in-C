@@ -1,6 +1,6 @@
-# How to properly and safe use a scanf function in C
+# How to properly and safely use a scanf function in C
 
-An example how to properly and safe you can use a **[scanf]** function to reading **7/8-bit ASCII** characters in **C** language.
+An example how to properly and safely you can use a **[scanf]** function to reading **7/8-bit ASCII** characters in **C** language.
 
 ## Build and run
 
