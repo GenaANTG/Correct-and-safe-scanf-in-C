@@ -2,7 +2,7 @@
 
 An example how to properly and safe you can use a **[scanf]** function to reading **7/8-bit ASCII** characters in **C** language.
 
-## Build && Run
+## Build and run
 
 ### Check the GGC compiler version
 
