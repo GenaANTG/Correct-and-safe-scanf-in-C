@@ -2,9 +2,9 @@
 
 An example how to properly and safely you can use a **[scanf]** function to reading **7/8-bit ASCII** characters in **C** language.
 
-## Build and run
+## 🚀 Build and run
 
-### Check the GGC compiler version
+### Check the GGC compiler version first.
 
 ```!
 $ gcc --version
@@ -14,15 +14,15 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-### Build
+### 🚀 Build
 
 You can add a **[-D DEBUG_ENABLED]** flag for your GCC compiler to display the **[stdin]** flushing process.
 
-`
+```bash
 gcc antg_safe_scanf.c -o safe_scanf -std=c11 -Wall -Wextra -Wpedantic -D DEBUG_ENABLED
-`
+```
 
-### Run
+### 🚀 Run
 
 ```bash
 $ ./safe_scanf
