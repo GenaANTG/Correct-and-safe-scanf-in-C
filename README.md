@@ -4,7 +4,7 @@ An example how to properly and safely you can use a **[scanf]** function to read
 
 ## 🚀 Build and run
 
-### Check the GGC compiler version first.
+### Check the GGC compiler version first
 
 ```!
 $ gcc --version
@@ -39,4 +39,4 @@ $ echo $?
 $
 ```
 
-&copy; 2020 Gena ANTG <antg.production@gmail.com>
+**&copy; 2020 Gena ANTG** [<antg.production@gmail.com>]
