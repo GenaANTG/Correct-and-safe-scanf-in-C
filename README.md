@@ -39,4 +39,4 @@ $ echo $?
 $
 ```
 
-**&copy; 2020 Gena ANTG** [<antg.production@gmail.com>]
+&copy; 2020 Gena ANTG
