@@ -16,7 +16,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 ### Build
 
-You can add **[-D DEBUG_ENABLED]** flag for your GCC compiler to display **[stdin]** flushing process.
+You can add a **[-D DEBUG_ENABLED]** flag for your GCC compiler to display the **[stdin]** flushing process.
 
 `
 gcc antg_safe_scanf.c -o safe_scanf -std=c11 -Wall -Wextra -Wpedantic -D DEBUG_ENABLED
