@@ -1,7 +1,7 @@
 /**
- * Example how to correct and safe reading 7/8-bit characters from [stdin] with a [scanf] function in a C language
- * Example how to correct flushing [stdin] in a C (don't use fflush(stdin)!)
- * Note: You can remove [#ifdef] blocks
+ * Example how to correct and safe reading 7/8-bit characters from [stdin] with a [scanf] function in C.
+ * Example how to correct flushing [stdin] in C (don't use fflush(stdin)!).
+ * Note: You can remove [#ifdef] blocks.
  * 
  * Copyright (c) 2020 Gena ANTG <antg.production@gmail.com>
  * License: GNU GPL
