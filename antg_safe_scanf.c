@@ -28,7 +28,7 @@ void stdin_flushing(void)
     #ifdef DEBUG_ENABLED
         debug("Flushing [stdin]...");
     #endif
-    char chr = '\0';
+    int chr = 0;
     while ((chr = getchar()) && chr != '\0' && chr != '\n' && chr != EOF);
 }
 
