@@ -39,8 +39,8 @@ void stdin_flushing(void)
  */
 char safe_read_char(char chr)
 {
-    int readed = scanf("%1c", &chr);
-    if (readed != 1)
+    int filled = scanf("%1c", &chr);
+    if (filled != 1)
     {
         fprintf(stderr, "[E] Reading error\n");
         exit(EXIT_FAILURE);
