@@ -39,7 +39,7 @@ $ echo $?
 0
 ```
 
-Output when **[Enter] (Line Feed)** has occurred:
+Output when a **[Enter] (Line Feed)** has occurred:
 
 ```bash
 $ ./safe_scanf
