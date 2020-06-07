@@ -20,8 +20,7 @@ static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 
 /**
  * A proper way to the flushing [stdin] stream
- * ! Important: You should use this function 
- * ! Important: after every [scanf] calling!
+ * ! Important: You should use this function after every [scanf] calling!
  */
 void stdin_flushing(void)
 {
