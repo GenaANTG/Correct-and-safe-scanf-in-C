@@ -21,7 +21,7 @@ static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 /**
  * A correct way to flushing [stdin]
  * ! Important: You should use this function 
- * ! Important: after every a [scanf] (or even better) [safe_read_char] calling!
+ * ! Important: after every [scanf] calling!
  */
 void stdin_flushing(void)
 {
@@ -29,7 +29,7 @@ void stdin_flushing(void)
         debug("Flushing [stdin]...");
     #endif
     int chr = 0;
-    while ((chr = getchar()) && chr != '\0' && chr != '\n' && chr != EOF);
+    while ((chr = getchar()) != '\0' && chr != '\n' && chr != EOF);
 }
 
 /**
@@ -45,6 +45,9 @@ char safe_read_char(char chr)
         fprintf(stderr, "[E] Reading error\n");
         exit(EXIT_FAILURE);
     }
+    if (chr != '\n') {
+        stdin_flushing();
+    }
     return chr;
 }
 
@@ -59,13 +62,9 @@ int main(void)
     chr = safe_read_char(chr);
     printf("Char is: [%c]\n", chr);
 
-    stdin_flushing();
-
     printf("Provide some char: ");
     chr = safe_read_char(chr);
     printf("Char is: [%c]\n", chr);
-
-    stdin_flushing();
 
     printf("Provide some char: ");
     chr = safe_read_char(chr);
