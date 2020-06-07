@@ -45,8 +45,8 @@ char safe_read_char(char chr)
         exit(EXIT_FAILURE);
     }
     /**
-     * Return first occurred LF symbol
-     * But still catch LF symbol in [stdin] stream (line 32)
+     * Return a first occurred LF symbol
+     * But still catch the LF symbols in the [stdin] stream (line 32)
      */
     if (chr != '\n') {
         stdin_flushing();
