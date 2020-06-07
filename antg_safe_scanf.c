@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 /**
- * Define a function to logging
+ * Define a function for debugging
  * if a [-D DEBUG_ENABLED] flag is enabled for a GCC compiler
  */
 #ifdef DEBUG_ENABLED
