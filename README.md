@@ -4,7 +4,7 @@ An example how to properly and safely you can use a **[scanf]** function to read
 
 ## 🚀 Build and run
 
-### Check the GGC compiler version first
+### Check the GCC compiler version first
 
 ```!
 $ gcc --version
