@@ -1,5 +1,5 @@
 /**
- * Example how to properly and safely reading the 7/8-bit characters from a [stdin] with a [scanf] function in C.
+ * Example how to properly and safely reading the 7/8-bit characters from a [stdin] stream with a [scanf] function in C.
  * Example how to properly flushing the [stdin] stream in C (don't use fflush(stdin)!).
  * Note: You can remove [#ifdef] blocks.
  * 
@@ -19,7 +19,7 @@ static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 #endif
 
 /**
- * A correct way to flushing [stdin]
+ * A proper way to the flushing [stdin] stream
  * ! Important: You should use this function 
  * ! Important: after every [scanf] calling!
  */
@@ -29,11 +29,11 @@ void stdin_flushing(void)
         debug("Flushing [stdin]...");
     #endif
     int chr = 0;
-    while ((chr = getchar()) != '\0' && chr != '\n' && chr != EOF);
+    while ((chr = getchar()) != '\0' && chr != '\n' && chr != '\r' && chr != EOF);
 }
 
 /**
- * A correct and safe way to reading a 7/8-bit (ASCII) character from [stdin]
+ * A proper and safe way to reading a 7/8-bit (ASCII) character from the [stdin] stream
  * @param chr 7/8 bit (ASCII) character
  * @return chr
  */
@@ -45,6 +45,10 @@ char safe_read_char(char chr)
         fprintf(stderr, "[E] Reading error\n");
         exit(EXIT_FAILURE);
     }
+    /**
+     * Return first occurred LF symbol
+     * But still catch LF symbol in [stdin] stream (line 32)
+     */
     if (chr != '\n') {
         stdin_flushing();
     }

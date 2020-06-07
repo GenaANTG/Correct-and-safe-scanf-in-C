@@ -27,16 +27,33 @@ gcc antg_safe_scanf.c -o safe_scanf -std=c11 -Wall -Wextra -Wpedantic -D DEBUG_E
 ```bash
 $ ./safe_scanf
 Provide some char: abc
+[DEBUG]: Flushing [stdin]...
 Char is: [a]
+Provide some char: bcd
 [DEBUG]: Flushing [stdin]...
-Provide some char: bca
 Char is: [b]
+Provide some char: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 [DEBUG]: Flushing [stdin]...
-Provide some char: cab
-Char is: [c]
+Char is: [a]
 $ echo $?
 0
-$
+```
+
+Output on **[Enter] (Line Feed)** provided:
+
+```bash
+$ ./safe_scanf
+Provide some char:
+Char is: [
+]
+Provide some char:
+Char is: [
+]
+Provide some char:
+Char is: [
+]
+$ echo $?
+0
 ```
 
 &copy; 2020 Gena ANTG
