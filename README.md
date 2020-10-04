@@ -1,4 +1,4 @@
-# How to properly and safely use a scanf function in C
+# Proper and safe way to read the ASCII chars in C
 
 An example how to properly and safely you can use a **[scanf]** function to reading **7/8-bit ASCII** characters in **C** language.
 
@@ -9,9 +9,6 @@ An example how to properly and safely you can use a **[scanf]** function to read
 ```!
 $ gcc --version
 gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Copyright (C) 2017 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
 ### 🚀 Build
@@ -56,4 +53,4 @@ $ echo $?
 0
 ```
 
-&copy; 2020 Gena ANTG
+&copy; 2020, Gena ANTG.
