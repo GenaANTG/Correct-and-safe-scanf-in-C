@@ -16,13 +16,13 @@ gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 You can add a **[-D DEBUG_ENABLED]** flag for your GCC compiler to display the **[stdin]** flushing process.
 
 ```bash
-gcc antg_safe_scanf.c -o safe_scanf -std=c11 -Wall -Wextra -Wpedantic -D DEBUG_ENABLED
+gcc antg_safe_read_char.c -o antg_safe_read_char -std=c11 -Wall -Wextra -Wpedantic -D DEBUG_ENABLED
 ```
 
 ### 🚀 Run
 
 ```bash
-$ ./safe_scanf
+$ ./antg_safe_read_char
 Provide some char: abc
 [DEBUG]: Flushing [stdin]...
 Char is: [a]
@@ -39,7 +39,7 @@ $ echo $?
 Output when a **[Enter] (LF)** has occurred:
 
 ```bash
-$ ./safe_scanf
+$ ./antg_safe_read_char
 Provide some char:
 Char is: [
 ]
