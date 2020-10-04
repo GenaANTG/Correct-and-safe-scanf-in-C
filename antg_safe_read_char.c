@@ -26,7 +26,7 @@ void stdin_flushing(void)
     debug("Flushing [stdin]...");
 #endif
     int chr = 0;
-    while ((chr = getchar()) != '\0' && chr != '\n' && chr != '\r' && chr != EOF);
+    while ((chr = getchar()) != '\0' && chr != '\n' && chr != EOF);
 }
 
 /**
