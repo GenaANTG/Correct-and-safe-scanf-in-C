@@ -8,6 +8,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#ifndef EMPTY_STRING
+#define EMPTY_STRING ""
+#endif
+
+#ifndef LF
+#define LF '\n'
+#endif
+
+#ifndef LE
+#define LE '\0'
+#endif
+
 /**
  * Define a function for debugging
  * if a [-D DEBUG_ENABLED] flag is enabled for a GCC compiler
@@ -18,15 +30,22 @@ static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 
 /**
  * A proper way to flush the [stdin] stream
- * ! Important: You should use this function after every [scanf] calling!
  */
-void stdin_flushing(void)
+void flush_stdin(void)
 {
 #ifdef DEBUG_ENABLED
     debug("Flushing [stdin]...");
 #endif
     int chr = 0;
-    while ((chr = getchar()) != '\0' && chr != '\n' && chr != EOF);
+
+    while ((chr = getchar()) != LE && chr != LF)
+    {
+        if (chr == EOF)
+        {
+            puts(EMPTY_STRING);
+            exit(EXIT_SUCCESS);
+        }
+    }
 }
 
 /**
@@ -37,6 +56,11 @@ void stdin_flushing(void)
 char antg_safe_read_char(char chr)
 {
     int filled = scanf("%1c", &chr);
+    if (filled == -1)
+    {
+        puts(EMPTY_STRING);
+        exit(EXIT_SUCCESS);
+    }
     if (filled != 1)
     {
         fprintf(stderr, "[E] Reading error\n");
@@ -48,8 +72,9 @@ char antg_safe_read_char(char chr)
      */
     if (chr != '\n')
     {
-        stdin_flushing();
+        flush_stdin();
     }
+
     return chr;
 }
 
