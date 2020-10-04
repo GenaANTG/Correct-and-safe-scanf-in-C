@@ -32,14 +32,14 @@ Char is: [a]
 Provide some char: bcd
 [DEBUG]: Flushing [stdin]...
 Char is: [b]
-Provide some char: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Provide some char: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 [DEBUG]: Flushing [stdin]...
 Char is: [a]
 $ echo $?
 0
 ```
 
-Output when a **[Enter] (Line Feed)** has occurred:
+Output when a **[Enter] (LF)** has occurred:
 
 ```bash
 $ ./safe_scanf
