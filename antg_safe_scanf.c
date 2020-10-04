@@ -1,12 +1,10 @@
 /**
- * Example how to properly and safely reading the 7/8-bit characters from a [stdin] stream with a [scanf] function in C.
- * Example how to properly flushing the [stdin] stream in C (don't use fflush(stdin)!).
+ * Proper and safe way to read the 7/8-bit characters from the [stdin] stream with a [scanf] function in C.
+ * Proper way to flush the [stdin] stream in C. (don't use the fflush(stdin), cuz it's wrong!).
  * Note: You can remove [#ifdef] blocks.
- * 
  * Copyright (c) 2020 Gena ANTG <antg.production@gmail.com>
  * License: GNU GPL
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,24 +17,24 @@ static inline void debug(char *msg) { printf("[DEBUG]: %s\n", msg); }
 #endif
 
 /**
- * A proper way to the flushing [stdin] stream
+ * A proper way to flush the [stdin] stream
  * ! Important: You should use this function after every [scanf] calling!
  */
 void stdin_flushing(void)
 {
-    #ifdef DEBUG_ENABLED
-        debug("Flushing [stdin]...");
-    #endif
+#ifdef DEBUG_ENABLED
+    debug("Flushing [stdin]...");
+#endif
     int chr = 0;
     while ((chr = getchar()) != '\0' && chr != '\n' && chr != '\r' && chr != EOF);
 }
 
 /**
- * A proper and safe way to reading a 7/8-bit (ASCII) character from the [stdin] stream
+ * A proper and safe way to read a 7/8-bit (ASCII) character from the [stdin] stream
  * @param chr 7/8 bit (ASCII) character
  * @return chr
  */
-char safe_read_char(char chr)
+char antg_safe_read_char(char chr)
 {
     int filled = scanf("%1c", &chr);
     if (filled != 1)
@@ -45,10 +43,11 @@ char safe_read_char(char chr)
         exit(EXIT_FAILURE);
     }
     /**
-     * Return a first occurred LF symbol
-     * But still catch the LF symbols in the [stdin] stream (line 32)
+     * Return first occurred [\n] symbol
+     * But still catch other [\n] symbols in [stdin] stream
      */
-    if (chr != '\n') {
+    if (chr != '\n')
+    {
         stdin_flushing();
     }
     return chr;
@@ -62,15 +61,15 @@ int main(void)
     char chr = '\0';
 
     printf("Provide some char: ");
-    chr = safe_read_char(chr);
+    chr = antg_safe_read_char(chr);
     printf("Char is: [%c]\n", chr);
 
     printf("Provide some char: ");
-    chr = safe_read_char(chr);
+    chr = antg_safe_read_char(chr);
     printf("Char is: [%c]\n", chr);
 
     printf("Provide some char: ");
-    chr = safe_read_char(chr);
+    chr = antg_safe_read_char(chr);
     printf("Char is: [%c]\n", chr);
 
     return EXIT_SUCCESS;
